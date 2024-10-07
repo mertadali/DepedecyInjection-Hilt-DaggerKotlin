@@ -16,6 +16,11 @@ class MainActivity : AppCompatActivity() {
     @Inject
      lateinit var mert : Musicians
 
+     @Inject
+     lateinit var adalı : DoImplementorInterfaceClass
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,7 +38,13 @@ class MainActivity : AppCompatActivity() {
 
          */
 
-            mert.sing()        // initialization  yapmazsak app çöker
+            mert.sing()        // initialization  yapmazsak app çöker ancak dependecy ınjection sayesinde çökmez.
 
+
+
+
+          println(adalı.myFunction())  // Interface de hiltin hangi sınıfı kullandığını anlaması için @bind yada @provides gibi Annotation kullanılır.
+
+          println(adalı.mySecondFunction())
     }
 }
